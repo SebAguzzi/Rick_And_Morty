@@ -1,8 +1,8 @@
 //importar styles de Card.module.css
-import styles from "./card.module.css";
+import styles from '../Card/Card';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { addFav, removeFav } from '../redux/actions'
+import { addFav, removeFav } from '../../redux/actions'
 import { useEffect, useState } from "react";
 
 
@@ -15,7 +15,7 @@ function Card({id, name, status, species, gender, origin, image, onClose, addFav
       removeFav(id);
     } else {
       setIsFav(true);
-      addFav({id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites});
+      addFav({id, name, status, species, gender, origin, image, onClose});
     }
   };
 
@@ -30,11 +30,11 @@ function Card({id, name, status, species, gender, origin, image, onClose, addFav
   return (
     <div className={styles.carta}>
       <div>
-        {isFav ? (
+        {isFav ? 
           <button onClick={handleFavorite}>❤️</button>
-        ) : (
+         : 
           <button onClick={handleFavorite}>🤍</button>
-        )}
+        }
         <button className="boton" onClick={() => onClose(id)}>
           X
         </button>

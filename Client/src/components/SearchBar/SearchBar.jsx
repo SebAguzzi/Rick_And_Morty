@@ -1,5 +1,5 @@
 import { useState } from "react"
-import styles from './card.module.css'
+import styles from '../SearchBar/SearchBar'
 
 
 export default function SearchBar({onSearch}) {
@@ -10,10 +10,18 @@ export default function SearchBar({onSearch}) {
     setId(event.target.value)
   }
 
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 13) {
+      onSearch(id);
+      setId('');
+      event.preventDefault();
+    }
+  }
+
   return (
       <div>
-        <input type='search' value={id} onChange={handleChange} />
+        <input type='search' value={id} onChange={handleChange} onKeyDown={handleKeyDown}/>
         <button className={styles.boton} onClick={() =>{onSearch(id)}}>Agregar</button>
       </div>
     )
-  }
+}

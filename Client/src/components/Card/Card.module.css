@@ -21,12 +21,7 @@ body {
   display: flex;
 }
 
-.navbar {
-  background-color: #333333;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
+
 
 .boton {
   background-color: #0077cc;

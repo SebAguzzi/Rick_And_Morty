@@ -1,7 +1,7 @@
-import generarNumeroAleatorio from "./Random.jsx";
-import SearchBar from "./SearchBar.jsx";
+import generarNumeroAleatorio from "../Random/Random.jsx";
+import SearchBar from "../SearchBar/SearchBar.jsx";
 import { Link, useLocation } from "react-router-dom";
-import styles from "./card.module.css";
+import styles from "./Nav.module.css";
 
 const Nav = ({ onSearch }) => {
   const location = useLocation();
@@ -27,7 +27,7 @@ const Nav = ({ onSearch }) => {
           About{" "}
         </Link>
       </button>
-      <button>
+      <button className={styles.boton}>
         <Link to="/favorites" className={styles.miLink}>
           FAVORITOS{" "}
         </Link>
